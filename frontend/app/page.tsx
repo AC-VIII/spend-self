@@ -81,11 +81,34 @@ export default function Home() {
     }
   }, []);
 
-  function submit(e: FormEvent) {
-    e.preventDefault();
-    if (!email.trim()) return;
+async function submit(e: FormEvent) {
+  e.preventDefault();
+
+  if (!email.trim()) return;
+
+  try {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/newsletter`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email.trim(),
+        }),
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error("Failed to subscribe");
+    }
+
     setJoined(true);
+  } catch (error) {
+    console.error("Newsletter subscription failed:", error);
   }
+}
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-[#f1eee5] text-[#171914]">
