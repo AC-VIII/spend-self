@@ -4,7 +4,6 @@ import { FormEvent, useEffect, useRef, useState } from "react";
 import {
   ArrowDown,
   ArrowRight,
-  ArrowUpRight,
   Check,
   Lock,
   Menu,
@@ -88,7 +87,7 @@ async function submit(e: FormEvent) {
 
   try {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/newsletter`,
+      `${process.env.NEXT_PUBLIC_API_URL}/newsletter/subscribe`,
       {
         method: "POST",
         headers: {
