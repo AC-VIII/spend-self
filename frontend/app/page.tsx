@@ -88,7 +88,7 @@ async function submit(e: FormEvent) {
 
   try {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/newsletter/subscribe`,
+      `${process.env.NEXT_PUBLIC_API_URL}/api/newsletter/subscribe`,
       {
         method: "POST",
         headers: {
