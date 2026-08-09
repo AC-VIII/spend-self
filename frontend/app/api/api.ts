@@ -73,7 +73,6 @@ class HttpClient {
       path,
       params
     );
-    console.log(`Making request to: ${url}`);
     const response = await fetch(url, {
       ...fetchOptions,
 

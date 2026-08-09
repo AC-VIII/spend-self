@@ -22,7 +22,6 @@ export default async function StaysPage() {
 
   return (
     <main className="min-h-screen bg-[#f1eee5]">
-      <Navbar />
       <section className="mx-auto max-w-[1400px] px-5 pb-20 pt-32 md:px-8">
         <div className="max-w-2xl">
           <p className="text-xs uppercase tracking-[0.2em] text-black/40">

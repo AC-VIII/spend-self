@@ -112,8 +112,6 @@ async function submit(e: FormEvent) {
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-[#f1eee5] text-[#171914]">
-      {/* NAV */}
-      <Navbar />
 
       {/* HERO — deliberately cinematic */}
       <section className="relative min-h-[100svh] overflow-hidden bg-[#10130f] text-[#f5f2e9]">

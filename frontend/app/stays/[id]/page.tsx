@@ -3,10 +3,8 @@ import { notFound } from "next/navigation";
 import {
   ArrowDown,
   ArrowLeft,
-  ArrowRight,
   Check,
   MapPin,
-  Play,
   Users,
 } from "lucide-react";
 
@@ -112,8 +110,6 @@ export default async function StayDetailsPage({
       {/* =====================================================
           NAVIGATION
       ====================================================== */}
-
-      <Navbar />
 
       {/* =====================================================
           FULL SCREEN HERO
