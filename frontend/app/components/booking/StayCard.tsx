@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { Stay } from "../../lib/stay"
 
 type Props = {
   stay: Stay;
@@ -12,7 +11,7 @@ export default function StayCard({ stay }: Props) {
     <div className="group overflow-hidden rounded-3xl border border-black/10 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
       <div className="relative h-72 overflow-hidden">
         <img
-          src={stay.image}
+          src={stay.image_url }
           alt={stay.name}
           className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
         />
@@ -35,7 +34,7 @@ export default function StayCard({ stay }: Props) {
             <p className="text-xs text-gray-500">From</p>
 
             <p className="text-xl font-semibold text-gray-900">
-              NPR {stay.pricePerNight.toLocaleString()}
+              NPR {stay.price_per_night.toLocaleString()}
             </p>
 
             <p className="text-xs text-gray-500">per night</p>

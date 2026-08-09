@@ -1,7 +1,6 @@
 "use client";
 
 import { Check, MapPin, CalendarDays, Users } from "lucide-react";
-// import { Stay } from "../../lib/stay";
 
 type BookingConfirmationProps = {
   stay: Stay;
