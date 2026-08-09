@@ -2,19 +2,23 @@
 
 import { FormEvent, useEffect, useRef, useState } from "react";
 import {
-  ArrowDown,
   ArrowRight,
   Check,
   Lock,
-  Menu,
-  X,
   Volume2,
   VolumeX,
 } from "lucide-react";
-import Navbar from "./components/Navbar";
+import Testimonials from "./components/testimonial/Testimonial";
+import Hero from "./components/home/Hero";
+import Statement from "./components/home/Statement";
+import Idea from "./components/home/Idea";
+import Experience from "./components/home/Experience";
+import Device from "./components/home/Device";
+import Philosophy from "./components/home/Philosophy";
+import Future from "./components/home/Future";
 
 export default function Home() {
-  const [menu, setMenu] = useState(false);
+  // const [menu, setMenu] = useState(false);
   const [email, setEmail] = useState("");
   const [joined, setJoined] = useState(false);
   const [muted, setMuted] = useState(true);
@@ -114,107 +118,13 @@ async function submit(e: FormEvent) {
     <main className="min-h-screen overflow-x-hidden bg-[#f1eee5] text-[#171914]">
 
       {/* HERO — deliberately cinematic */}
-      <section className="relative min-h-[100svh] overflow-hidden bg-[#10130f] text-[#f5f2e9]">
-        <div className="absolute inset-0">
-          <video
-            className="hero-video absolute inset-0"
-            src="/videos/himalayan-hero.mp4"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-            aria-hidden="true"
-          />
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,7,5,.28)_0%,rgba(5,7,5,.08)_34%,rgba(5,7,5,.72)_100%)]" />
-          <div className="film-grain absolute inset-0" />
-        </div>
-
-        <div className="absolute left-5 top-28 z-10 flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-white/50 md:left-8">
-          <span className="signal-dot" /> A different kind of travel
-        </div>
-
-        <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-[1400px] flex-col justify-end px-5 pb-8 pt-40 md:px-8 md:pb-10">
-          <div className="hero-kicker mb-7 text-xs uppercase tracking-[0.28em] text-white/55">
-            Disconnect to reconnect
-          </div>
-
-          <h1 className="max-w-6xl font-display text-[clamp(4.2rem,11.2vw,10.5rem)] leading-[0.79] tracking-[-0.065em]">
-            When was the
-            <br />
-            last time you
-            <br />
-            <em>disappeared?</em>
-          </h1>
-
-          <div className="mt-10 grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
-            <p className="max-w-[470px] text-[15px] leading-7 text-white/72 md:text-lg">
-              A few days somewhere remote. Your phone stays behind.
-              The rest of the world can wait.
-            </p>
-            <a href="#why" className="group flex items-center gap-3 text-[11px] uppercase tracking-[0.24em]">
-              See what we mean
-              <span className="flex h-12 w-12 items-center justify-center rounded-full border border-white/25 transition duration-300 group-hover:bg-white group-hover:text-black">
-                <ArrowDown size={15} />
-              </span>
-            </a>
-          </div>
-        </div>
-      </section>
+      <Hero />
 
       {/* INTERRUPT / STATEMENT */}
-      <section className="relative overflow-hidden bg-[#11140f] px-5 py-24 text-[#f3f0e7] md:px-8 md:py-32">
-        <div className="mx-auto max-w-[1400px]">
-          <div className="grid gap-16 md:grid-cols-[.7fr_1.8fr]">
-            <div>
-              <p className="text-[10px] uppercase tracking-[0.3em] text-white/35">A small question</p>
-              <div className="mt-8 flex items-center gap-3 text-sm text-white/50">
-                <span className="pulse-ring" />
-                Think about it.
-              </div>
-            </div>
-            <h2 className="font-display text-[clamp(3.2rem,7vw,7.2rem)] leading-[0.86] tracking-[-0.055em]">
-              How much of your life
-              <br />
-              is spent <em>looking at it?</em>
-            </h2>
-          </div>
-        </div>
-      </section>
+      <Statement />
 
       {/* VISUAL MOSAIC */}
-      <section id="why" className="bg-[#f1eee5] px-5 py-20 md:px-8 md:py-32">
-        <div className="mx-auto max-w-[1400px]">
-          <div className="mb-14 flex flex-col justify-between gap-7 md:flex-row md:items-end">
-            <div>
-              <p className="text-[10px] uppercase tracking-[0.3em] opacity-45">The idea</p>
-              <h2 className="mt-5 max-w-3xl font-display text-[clamp(3.5rem,7vw,7.5rem)] leading-[0.85] tracking-[-0.06em]">
-                Put the screen
-                <br />
-                <em>down.</em>
-              </h2>
-            </div>
-            <p className="max-w-xs text-sm leading-6 opacity-55">
-              Not forever. Just long enough to remember there is a world outside it.
-            </p>
-          </div>
-
-          <div className="mosaic-grid">
-            <div className="mosaic-card tall image-mountain">
-              <div className="mosaic-label">01 / somewhere quiet</div>
-            </div>
-            <div className="mosaic-card image-table">
-              <div className="mosaic-label">02 / eat slowly</div>
-            </div>
-            <div className="mosaic-card image-hands">
-              <div className="mosaic-label">03 / use your hands</div>
-            </div>
-            <div className="mosaic-card wide image-village">
-              <div className="mosaic-label">04 / live locally</div>
-            </div>
-          </div>
-        </div>
-      </section>
+     <Idea />
 
       {/* CINEMATIC JOURNEY */}
       <section id="journey" className="relative bg-[#10130f] text-[#f3f0e7]">
@@ -297,100 +207,19 @@ async function submit(e: FormEvent) {
       </section>
 
       {/* EXPERIENCE */}
-      <section id="experience" className="overflow-hidden bg-[#20261d] text-[#f3f0e7]">
-        <div className="mx-auto grid max-w-[1400px] md:grid-cols-[1.05fr_.95fr]">
-          <div className="experience-image min-h-[600px] md:min-h-[820px]" />
-          <div className="flex flex-col justify-center px-5 py-24 md:px-16 lg:px-24">
-            <p className="text-[10px] uppercase tracking-[0.3em] text-white/35">The experience</p>
-            <h2 className="mt-7 font-display text-[clamp(3.5rem,6vw,6.7rem)] leading-[0.86] tracking-[-0.055em]">
-              You don't come to
-              <br />
-              <em>document</em> life.
-            </h2>
-            <p className="mt-8 max-w-lg text-lg leading-8 text-white/60">
-              You come to experience it.
-            </p>
+      <Experience />
 
-            <div className="mt-12 grid gap-0 border-y border-white/12">
-              {[
-                ["Wake", "with the light."],
-                ["Eat", "what the place grows."],
-                ["Work", "with your hands."],
-                ["Walk", "until you stop checking the time."],
-                ["Talk", "to people who don't know your feed."],
-              ].map(([a, b], i) => (
-                <div key={a} className="flex items-center justify-between border-b border-white/10 py-5 last:border-0">
-                  <span className="text-[10px] uppercase tracking-[0.25em] text-white/35">0{i + 1}</span>
-                  <span className="w-24 text-sm">{a}</span>
-                  <span className="flex-1 text-sm text-white/50">{b}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* TESTIMONIALS */}
+    <Testimonials />
 
       {/* DEVICE MOMENT */}
-      <section className="relative overflow-hidden bg-[#0d0f0c] px-5 py-28 text-[#f3f0e7] md:px-8 md:py-40">
-        <div className="mx-auto grid max-w-[1400px] items-center gap-16 md:grid-cols-[1.15fr_.85fr]">
-          <div>
-            <p className="text-[10px] uppercase tracking-[0.3em] text-white/30">One rule</p>
-            <h2 className="mt-7 max-w-4xl font-display text-[clamp(4rem,8.5vw,9rem)] leading-[0.78] tracking-[-0.07em]">
-              Your phone
-              <br />
-              stays <em>with us.</em>
-            </h2>
-          </div>
-          <div className="device-illustration mx-auto">
-            <div className="phone">
-              <div className="phone-screen">
-                <div className="phone-time">7:14</div>
-                <div className="phone-notification">No new notifications.</div>
-              </div>
-            </div>
-            <div className="phone-shadow" />
-          </div>
-        </div>
-        <p className="mx-auto mt-20 max-w-[1400px] text-center text-xs text-white/35">
-          Voluntarily. Safely. Temporarily. The point isn't to punish technology — it's to create room for something else.
-        </p>
-      </section>
+      <Device />
 
       {/* PHILOSOPHY */}
-      <section className="bg-[#f1eee5] px-5 py-28 md:px-8 md:py-40">
-        <div className="mx-auto max-w-[1400px]">
-          <p className="text-[10px] uppercase tracking-[0.3em] opacity-45">The philosophy</p>
-          <div className="mt-9 max-w-6xl">
-            <h2 className="font-display text-[clamp(3.5rem,8vw,9.2rem)] leading-[0.82] tracking-[-0.065em]">
-              Leave the digital world.
-              <br />
-              <em>Come back to yourself.</em>
-            </h2>
-          </div>
-          <div className="mt-20 grid gap-8 border-t border-black/12 pt-8 md:grid-cols-3">
-            <p className="text-sm leading-6">Remote places where life moves differently.</p>
-            <p className="text-sm leading-6">Local food, local people, real work, real landscapes.</p>
-            <p className="text-sm leading-6">A temporary reset — not an escape from modern life forever.</p>
-          </div>
-        </div>
-      </section>
+      <Philosophy />
 
       {/* FUTURE */}
-      <section className="relative overflow-hidden bg-[#c9d4bf] px-5 py-28 md:px-8 md:py-40">
-        <div className="future-image absolute inset-0 opacity-25" />
-        <div className="relative mx-auto max-w-[1400px]">
-          <p className="text-[10px] uppercase tracking-[0.3em] opacity-50">Where we're starting</p>
-          <h2 className="mt-8 max-w-6xl font-display text-[clamp(4rem,9vw,10rem)] leading-[0.78] tracking-[-0.07em]">
-            Somewhere
-            <br />
-            <em>worth disappearing to.</em>
-          </h2>
-          <div className="mt-12 flex flex-col gap-5 text-sm md:flex-row md:items-center">
-            <span className="rounded-full border border-black/15 px-5 py-3">The Himalayas · First experience</span>
-            <span className="opacity-50">More places to follow.</span>
-          </div>
-        </div>
-      </section>
+      <Future />
 
       {/* WAITLIST */}
       <section id="waitlist" className="bg-[#171914] px-5 py-28 text-[#f2efe7] md:px-8 md:py-40">

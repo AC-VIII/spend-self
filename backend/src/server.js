@@ -9,6 +9,7 @@ const newsletterRoutes = require("./routes/newsletter");
 const stayRoutes = require("./routes/stay");
 const bookingRoutes = require("./routes/booking");
 const blogRoutes = require("./routes/blog");
+const testimonialRoutes = require("./routes/testimonials");
 
 const app = express();
 
@@ -41,6 +42,7 @@ app.use("/api/newsletter", newsletterRoutes);
 app.use("/api/bookings", bookingRoutes);
 app.use("/api/stays", stayRoutes);
 app.use("/api/blogs", blogRoutes);
+app.use("/api/testimonials",testimonialRoutes);
 
 app.use((req, res) => {
   res.status(404).json({
