@@ -11,6 +11,7 @@ import {
   Volume2,
   VolumeX,
 } from "lucide-react";
+import Navbar from "./components/Navbar";
 
 export default function Home() {
   const [menu, setMenu] = useState(false);
@@ -112,36 +113,7 @@ async function submit(e: FormEvent) {
   return (
     <main className="min-h-screen overflow-x-hidden bg-[#f1eee5] text-[#171914]">
       {/* NAV */}
-      <header
-        className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? "bg-[#f1eee5]/92 shadow-sm backdrop-blur-xl"
-            : "bg-transparent"
-        }`}
-      >
-        <div className="mx-auto flex max-w-[1400px] items-center justify-between px-5 py-5 md:px-8">
-          <a href="#" className="font-display text-[25px] tracking-[-0.055em] text-white drop-shadow-[0_2px_8px_rgba(0,0,0,.55)]">
-            spendself<span className="opacity-40">.</span>
-          </a>
-          <nav className="hidden items-center gap-8 text-[13px] md:flex">
-            <a href="#why" className="navlink navlink-dark">Why</a>
-            <a href="#experience" className="navlink navlink-dark">Experience</a>
-            <a href="#waitlist" className="navlink navlink-dark">Coming soon</a>
-          </nav>
-          <button className="md:hidden" aria-label="Menu" onClick={() => setMenu(!menu)}>
-            {menu ? <X size={22} /> : <Menu size={22} />}
-          </button>
-        </div>
-        {menu && (
-          <div className="border-t border-black/10 bg-[#f1eee5] px-5 py-7 md:hidden">
-            <div className="flex flex-col gap-6 text-lg">
-              <a href="#why" onClick={() => setMenu(false)}>Why</a>
-              <a href="#experience" onClick={() => setMenu(false)}>Experience</a>
-              <a href="#waitlist" onClick={() => setMenu(false)}>Coming soon</a>
-            </div>
-          </div>
-        )}
-      </header>
+      <Navbar />
 
       {/* HERO — deliberately cinematic */}
       <section className="relative min-h-[100svh] overflow-hidden bg-[#10130f] text-[#f5f2e9]">

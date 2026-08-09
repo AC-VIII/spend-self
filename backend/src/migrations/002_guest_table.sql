@@ -1,0 +1,15 @@
+CREATE TABLE guests (
+    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+
+    full_name VARCHAR(150) NOT NULL,
+    country VARCHAR(100) NOT NULL,
+    phone VARCHAR(50) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        ON UPDATE CURRENT_TIMESTAMP,
+
+    INDEX idx_guest_email (email),
+    INDEX idx_guest_phone (phone)
+);

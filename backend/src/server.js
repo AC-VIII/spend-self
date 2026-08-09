@@ -6,6 +6,8 @@ const helmet = require("helmet");
 
 const { testConnection } = require("./db/database");
 const newsletterRoutes = require("./routes/newsletter");
+const stayRoutes = require("./routes/stay");
+const bookingRoutes = require("./routes/booking");
 
 const app = express();
 
@@ -35,6 +37,8 @@ app.get("/api/health", async (req, res) => {
 });
 
 app.use("/api/newsletter", newsletterRoutes);
+app.use("/api/bookings", bookingRoutes);
+app.use("/api/stays", stayRoutes);
 
 app.use((req, res) => {
   res.status(404).json({
