@@ -100,7 +100,7 @@ async function submit(e: FormEvent) {
       }
     );
 
-    if (!response.ok) {
+    if (!response.ok && response.status !== 409) {
       throw new Error("Failed to subscribe");
     }
 

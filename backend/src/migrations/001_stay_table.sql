@@ -18,7 +18,7 @@ CREATE TABLE stays (
     image_url VARCHAR(500) NULL,
     video_url VARCHAR(500) NULL,
     gallery JSON NULL,
-    experience JSON NULL,
+    virtual_experience JSON NULL,
     virtual_experience_url VARCHAR(500) NULL,
 
     status ENUM(
