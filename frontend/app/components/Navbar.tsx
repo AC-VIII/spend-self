@@ -46,6 +46,15 @@ export default function Navbar() {
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-8 text-[13px] md:flex">
           <Link
+            href="/blogs"
+            className={`navlink ${
+              scrolled ? "navlink-light" : "navlink-dark"
+            }`}
+          >
+            Journal
+          </Link>
+
+          <Link
             href="/#why"
             className={`navlink ${
               scrolled ? "navlink-light" : "navlink-dark"
